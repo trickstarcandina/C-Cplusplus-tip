@@ -1,0 +1,100 @@
+int stringToNum(char c)     // chuyen char sang so{
+    return c - '0';
+} 
+char numToString(int n)     // chuyen so sang char{
+    return (char)(n+48);
+}
+========================
+đối với số:
+char->int  .... -'0'
+int->char     ...    (char)(..... + '0')
+đối với chữ:
+ép kiểu
+string a;
+for (int i=0; i<a.length(); i++){
+       int cs=a[i];
+}
+=================================================================================================================
+Hàm getline
+
+Khi sử dụng phải khai báo thư viện string.
+Đối với C++ :
+
+cấu trúc :
+getline(std::cin,<bien>);
+Định nghĩa : thuộc lớp namespace std. Có chức năng nhận các thông tin từ bàn phím qua hàm ( std::cin ) sau đó chuyền vào biến chỉ định.
+ví dụ : Hãy xuất ra ngoài 1 biến trong đó sở hữu tên của bạn từ bàn phím.
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string ten;
+    cin.ignore();  // thêm vào để xoá bộ nhớ đệm, tránh bị trôi lệnh
+    cout<<"Nhap ten cua ban :  "<<endl;
+    getline(std::cin,ten);
+    cout<<"xin chao ban "<<ten<<" den voi ngon ngu lap trinh c/c++!!!"<<endl;
+    return 0;
+}
+Lời khuyên : hàm getline sử dụng dưa trên việc thông qua lưu trữ giá trị hàm cin nhận vào. Ở đây cin chỉ nhận từng lần nhập liệu sau đó sẽ kết thúc khi gặp khoảng trắng hay xuống hàng. 
+vì thế getline lưu trư toàn bộ thông tin và truyền vào biến.
+Lưu ý : Việc sử dụng hàm getline có thể gây mất biến khi nhấn enter nghĩa là nếu bạn tạo 1 biến có giá trị số sau đó bạn getline và in 1 chuỗi ký tự.
+Nên xoá bộ nhớ đệm trước khi getline để tránh lỗi.
+std::fflush(stdin);
+###C
+
+Thư viện < stdio.h>
+cấu trúc ssize_t getline(char ** ptr, size_t *n,FILE * stream);
+Trong C thì nó sẽ đọc 1 dòng. Nếu *n < số kí tự( bao gồm ‘\n’) thì nó sẽ gọi realloc *ptr và thay đổi *n.
+giá trị trả về là số kí tự được đọc. Hoặc nếu có lỗi sẽ trả về -1
+=================================================================================================================
+Cách nhập chuỗi trong c++ dùng hàm gets
+Nếu bạn khai báo là một con trỏ char hay một mảng char thì bạn có thể dùng hàm gets() để nhập.
+Ví dụ cách sử dụng hàm gets()
+
+
+ 
+#include <iostream>
+#include<string>
+using namespace std;
+ 
+int main()
+{
+    char *s = new char[100];
+    gets(s); //Dùng để nhập
+    cout <<"Ban vua nhap la: ";
+    cout << s;
+    system("pause");
+    return 0;
+}
+ 
+Nhưng nếu bạn biên dịch chương trình trên bằng Visual Studio thì sẽ bị lỗi ngay. Lý do bị lỗi là chương trình không thể biết bạn nhập bao nhiêu kí tự. Vì vậy bạn có thể nhập bằng hàm fgets() thay vì hàm gets() .
+
+Cú pháp nhập: fgets( name, count, file) trong đó
+
+name là tên biến cần nhập.
+count là số kí tự tối đa nhập vào.
+file là tên file cần nhập, trong trường hợp này ta sẽ dùng stdin.
+Tham khảo ví dụ sau:
+
+
+ 
+#include <iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    char* s;
+    s = new char[100];
+    fgets(s, 100, stdin);
+    cout << "Ban vua nhap la: ";
+    cout << s;
+    system("pause");
+    return 0;
+}
+ 
+Và dưới đây là kết quả
+
+
+xin chao
+Ban vua nhap la: xin chao

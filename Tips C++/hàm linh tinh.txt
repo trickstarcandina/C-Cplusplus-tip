@@ -1,0 +1,9 @@
+g++ helloWorld.cpp -o helloWorld
+.\helloWorld
+sort(a,a+x,greater<int>());
+=======================================================================================================
+memset dùng để gán các phần tử 
+void *memset(void *str, int c, size_t n) sao chép ký tự c (một unsigned char) tới n ký tự đầu tiên của chuỗi được trỏ tới bởi tham số str.
+========================================================================================================
+assign
+cho vector và string để gán giá trị khác

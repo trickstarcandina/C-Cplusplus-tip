@@ -1,0 +1,14 @@
+https://congvietit.com/chia-se-11-doan-code-giup-tang-tuong-tac-nick-facebook/#3Tu_dong_like_Anh_trong_album_ban_be
+
+==========================================
+javascript:var inputs = document.getElementsByClassName('_1ekf');
+var input2=document.getElementsByClassName('img _mpx img _4s0y');
+for(var i=0; i<inputs.length;i+=1) {
+	inputs[i].click();
+	for(var j=0; j<inputs.length;j+=1) {
+		if(j==1){
+			input2[j].click();
+		}
+	}
+}
+================================================
